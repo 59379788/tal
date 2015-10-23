@@ -1,0 +1,138 @@
+*{margin: 0px;padding:0px;font-family: "Microsoft YaHei"; }
+
+.show{display:block;}
+
+.mt3{margin-top:3px;}
+.mt4{margin-top:4px;}
+.mt5{margin-top:5px;}
+.mt7{margin-top:7px;}
+.mt10{margin-top:10px;}
+.mt12{margin-top:12px;}
+.mt20{margin-top:20px;}
+.mt50{margin-top:50px;}
+.mt100{margin-top:100px;}
+
+.mb10{margin-bottom:10px;}
+
+.ml10{margin-left: 10px;}
+.ml20{margin-left: 20px;}
+.mr20{margin-right: 20px;}
+
+
+.browsehappy {
+  margin: 0.2em 0;
+  background: #ccc;
+  color: #000;
+  padding: 0.2em 0;
+}
+
+body {
+  padding: 0;
+}
+
+/* Everything but the jumbotron gets side spacing for mobile first views */
+.header,
+.marketing,
+.footer {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+/* Custom page header */
+.header {
+  border-bottom: 1px solid #e5e5e5;
+  margin-bottom: 10px;
+}
+/* Make the masthead heading the same height as the navigation */
+.header h3 {
+  margin-top: 0;
+  margin-bottom: 0;
+  line-height: 40px;
+  padding-bottom: 19px;
+}
+
+/* Custom page footer */
+.footer {
+  padding-top: 10px;
+  min-height: 40px;
+  color: #777;
+  border-top: 1px solid #e5e5e5;
+}
+
+.container-narrow > hr {
+  margin: 30px 0;
+}
+
+/* Main marketing message and sign up button */
+.jumbotron {
+  text-align: center;
+  border-bottom: 1px solid #e5e5e5;
+}
+.jumbotron .btn {
+  font-size: 21px;
+  padding: 14px 24px;
+}
+
+/* Supporting marketing content */
+.marketing {
+  margin: 40px 0;
+}
+.marketing p + h4 {
+  margin-top: 28px;
+}
+
+/* Responsive: Portrait tablets and up */
+@media screen and (min-width: 768px) {
+  .container {
+    max-width: 730px;
+  }
+
+  /* Remove the padding we set earlier */
+  .header,
+  .marketing,
+  .footer {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  /* Space out the masthead */
+  .header {
+/*    margin-bottom: 30px;*/
+  }
+  /* Remove the bottom border on the jumbotron for visual effect */
+  .jumbotron {
+    border-bottom: 0;
+  }
+}
+
+.nav1{margin-bottom: 0px;}
+.nav1 .navbar{
+	background: url("../images/header_bg.png");
+	min-height: 37px;
+	margin-bottom:0px;
+}
+
+.nav1 .navbar-nav>li>a{padding-top:8px; padding-bottom:8px;}
+.nav1 .nav>li>a{color:#fff; font-size:14px;}
+.nav1 .nav>li>a:hover{color:#666; background-color: transparent;}
+.nav1 .nav>li>a:focus{background-color: transparent;}
+.nav1 .nav>li>a span{margin-right:5px;}
+
+
+.nav2 {
+	margin-bottom:0px;
+/*	height:60px;*/
+}
+.nav2 .navbar{margin-bottom: 0px;}
+.nav2 .nav>li>a{font-size:16px; color:#666;}
+.nav2 .nav>li>a:hover{background-color:#fff;}
+.nav2 .nav>li>a:focus{background-color:#fff;}
+.nav2 .nav>li>a img{margin-right:7px;}
+
+
+
+/*************************************/
+.base_info tr td { text-align:center;}
+.img_service { margin-top:5px;}
+.service_list { margin-top:15px; margin-right:10px;}
+/*************************************/
+

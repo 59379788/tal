@@ -1,0 +1,35 @@
+ <table class="table table-bordered productstable">
+  <thead>
+    <tr>
+      <th class="text-center">团期</th>
+      <th class="text-center">团号</th>
+      <th class="text-center">限定人数</th>
+      <th class="text-center">团状态</th>
+      <th class="text-center">操作</th>
+    </tr>
+  </thead>
+  <tbody >
+    <tr ng-repeat='team in teams'>
+      <td class="col-md-2 text-center">{{team.gdate}}</td>
+      <td>{{team.code}}</td>
+      <td class="col-md-1 text-center">{{team.person_limit}}</td>
+      <td class="col-md-1 text-center">{{stateArray[team.state]}}</td>
+      <td class="col-md-3 text-center">
+          <a ng-href="#editteam/{{team.code}}" ng-show="team.state==0" class="btn btn-success ">编辑</a>
+          <a class="btn btn-warning " ng-show="team.state==0" ng-click="shangjia(team.code)">开团</a>
+          <a class="btn btn-info " ng-show="team.state==1" ng-click="xiajia(team.code)">取消</a>
+          <a class="btn btn-danger " ng-show="team.state==0" ng-click="delete(team.code)">删除</a>
+          <a class="btn btn-primary " ng-show="team.state==1" ng-click="finish(team.code)">封团</a>
+          <a class="btn btn-primary " ng-href="#teaminfo/{{team.code}}" >详情</a>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="col-md-12 text-right">
+
+
+<pagination items-per-page="itemsPerPage" total-items="bigTotalItems" ng-model="bigCurrentPage" max-size="maxSize" class="pagination-sm" boundary-links="true" rotate="false" num-pages="numPages" ng-change="load()"></pagination>
+
+
+</div>

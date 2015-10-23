@@ -1,0 +1,120 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>居游线路平台</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <!-- build:css(.) styles/vendor.css -->
+    <!-- bower:css -->
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
+    <!-- endbower -->
+    <!-- endbuild -->
+    <!-- build:css(.tmp) styles/main.css -->
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/products.css"  >
+    <!-- endbuild -->
+    
+    
+  </head>
+  <body ng-app="lineApp">
+    <!--[if lte IE 8]>
+      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+
+    <!-- Add your site or application content here -->
+    <div class="header">
+      <div class="nav1">
+        <nav class="navbar">
+            <div class="container-fluid">
+                <ul class="nav navbar-nav navbar-right">
+<!--
+                    <li><a href="account.html"><span class="glyphicon glyphicon-user" aria-hidden="true"></span>账户</a></li>
+                    <li><a href="service.html"><span class="glyphicon glyphicon-comment" aria-hidden="true"></span>客服</a></li>
+                    <li><a href="help.html"><span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span>帮助</a></li>
+-->
+                    <li><a href="manager/logout"><span class="glyphicon glyphicon-off" aria-hidden="true"></span>注销</a></li>
+                </ul>
+            </div>
+        </nav>
+      </div>
+      <div class="nav2">
+        <nav class="navbar">
+            <div class="container-fluid">
+                <img src="images/logo.png" width="36" height="36" class="navbar-left mt12">
+                <ul class="nav navbar-nav navbar-left">
+                    <li><a ng-href="#/"><img src="images/ico01.png">首页</a></li>
+                    <li><a ng-href="#/products"><img src="images/ico02.png">线路管理</a></li>
+                    <li><a ng-href="#/insurance"><img src="images/ico02.png">保险管理</a></li>
+<!--
+                    <li><a ng-href="#/orders"><img src="images/ico03.png">订单管理</a></li>
+                    <li><a ng-href="#/settlement"><img src="images/ico04.png">财务结算</a></li>
+-->
+                </ul>
+            </div>
+        </nav>
+      </div>
+     
+     
+    </div>
+
+    <div class="container-fluid">
+    <div ng-view=""></div>
+    </div>
+
+  
+    <div class="mt50"></div>
+  
+   
+    <nav class="footer navbar navbar-default navbar-fixed-bottom ">
+      <div class="container-fluid text-center">
+        <span class="glyphicon glyphicon-heart"></span> from 慧鼎商务
+      </div>
+    </nav>
+
+    <!-- build:js(.) scripts/vendor.js -->
+    <!-- bower:js -->
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="bower_components/angular-animate/angular-animate.js"></script>
+    <script src="bower_components/angular-aria/angular-aria.js"></script>
+    <script src="bower_components/angular-cookies/angular-cookies.js"></script>
+    <script src="bower_components/angular-messages/angular-messages.js"></script>
+    <script src="bower_components/angular-resource/angular-resource.js"></script>
+    <script src="bower_components/angular-route/angular-route.js"></script>
+    <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+    <script src="bower_components/angular-touch/angular-touch.js"></script>
+    <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+    <script src="bower_components/ng-file-upload/ng-file-upload.js"></script>
+    <script src="bower_components/angular-file-upload/dist/angular-file-upload.min.js"></script>
+    <!-- endbower -->
+    <!-- endbuild -->
+
+    <!-- build:js({.tmp,app}) scripts/scripts.js -->
+    <script src="scripts/app.js"></script>
+    <script src="scripts/controllers/main.js"></script>
+    <script src="scripts/controllers/about.js"></script>
+    <script src="scripts/controllers/home.js"></script>
+    <script src="scripts/services/users.js"></script>
+    <script src="scripts/controllers/products.js"></script>
+    <script src="scripts/controllers/orders.js"></script>
+    <script src="scripts/controllers/settlement.js"></script>
+    <script src="scripts/services/products.js"></script>
+<!--    <script src="scripts/directives/pages.js"></script>-->
+    <script src="scripts/controllers/createline.js"></script>
+    <script src="scripts/controllers/editline.js"></script>
+    <script src="scripts/controllers/team.js"></script>
+    <script src="scripts/services/team.js"></script>
+    <script src="scripts/controllers/teamlist.js"></script>
+    <script src="scripts/controllers/editteam.js"></script>
+    <script src="scripts/services/httpinjector.js"></script>
+    <script src="scripts/services/common.js"></script>
+    <script src="scripts/controllers/insurance.js"></script>
+<!--    <script src="scripts/services/insurance.js"></script>-->
+    <script src="scripts/controllers/teaminfo.js"></script>
+    <script src="scripts/controllers/lineinfo.js"></script>
+    <!-- endbuild -->
+</body>
+</html>
