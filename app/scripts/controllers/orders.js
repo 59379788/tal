@@ -8,10 +8,12 @@
  * Controller of the lineApp
  */
 angular.module('lineApp')
-  .controller('OrdersCtrl', function () {
-    this.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
+  .controller('OrdersCtrl', function ($scope) {
+    
+    
+    
+    
+    
+    
+    
   });
