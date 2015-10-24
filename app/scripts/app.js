@@ -125,7 +125,11 @@ angular
       .when('/orders', {
         templateUrl: 'views/orders.html',
         controller: 'OrdersCtrl',
-        controllerAs: 'orders'
+        resolve:{
+            orders : function(order){
+                return order.query();
+            }
+        }
       })
       .when('/settlement', {
         templateUrl: 'views/settlement.html',

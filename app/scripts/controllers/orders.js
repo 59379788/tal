@@ -8,9 +8,11 @@
  * Controller of the lineApp
  */
 angular.module('lineApp')
-  .controller('OrdersCtrl', function ($scope) {
+  .controller('OrdersCtrl', function ($scope, orders) {
     
+    console.log(orders);
     
+    $scope.orders = orders;
     
     
     
