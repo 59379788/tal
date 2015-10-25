@@ -8,11 +8,16 @@
  * Controller of the lineApp
  */
 angular.module('lineApp')
-  .controller('OrdersCtrl', function ($scope, orders) {
+  .controller('OrdersCtrl', function ($scope, orders, orderstate) {
     
     console.log(orders);
     
+    
+    
     $scope.searchform = {};
+    console.log(orderstate);
+    $scope.statearray = orderstate;
+    $scope.searchform.state = "";
     
     /* 分页
      * ========================================= */
@@ -29,8 +34,6 @@ angular.module('lineApp')
         angular.extend(para, $scope.searchform);
         
         console.log(para);
-        
-        return;
         
         orders.get(para, function(res){
            if(res.errcode === 0)

@@ -69,11 +69,19 @@
 </table>
 
 <div class="col-md-12 text-right">
-
-
-<pagination items-per-page="itemsPerPage" total-items="bigTotalItems" ng-model="bigCurrentPage" max-size="maxSize" class="pagination-sm" boundary-links="true" rotate="false" num-pages="numPages" ng-change="load()"></pagination>
-
-
+    <pagination items-per-page="itemsPerPage" 
+                total-items="bigTotalItems" 
+                ng-model="bigCurrentPage" 
+                max-size="maxSize" 
+                class="pagination-sm" 
+                boundary-links="true" 
+                rotate="false" 
+                num-pages="numPages" 
+                previous-text="上一页"
+                next-text="下一页"
+                first-text="首页"
+                last-text="末页"
+                ng-change="load()"></pagination>
 </div>
 
 

@@ -128,6 +128,9 @@ angular
         resolve:{
             orders : function(order){
                 return order.query();
+            },
+            orderstate : function(common){
+                return common.orderstate;
             }
         }
       })

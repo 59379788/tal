@@ -121,13 +121,13 @@ angular.module('lineApp')
       ],
       orderstate : [
           {name : "全部", code : ""},
-          {name : "待处理", code : 0},
-          {name : "已退回", code : 1},
-          {name : "已处理", code : 2},
-          {name : "投诉中", code : 3},
-          {name : "申请退款", code : 0},
-          {name : "退款中", code : 1},
-          {name : "退款完成", code : 2}
+          {name : "待处理", code : "0"},
+          {name : "已退回", code : "1"},
+          {name : "已处理", code : "2"},
+          {name : "投诉中", code : "3"},
+          {name : "申请退款", code : "4"},
+          {name : "退款中", code : "5"},
+          {name : "退款完成", code : "6"}
       ]
     };
   });
