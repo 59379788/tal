@@ -242,6 +242,15 @@ angular
         controller: 'TeaminfoCtrl',
         controllerAs: 'teaminfoxx'
       })
+      .when('/statistics', {
+        templateUrl: 'views/statistics.html',
+        controller: 'StatisticsCtrl',
+        resolve:{
+            statistics : function(order){
+                return order.statistics();
+            }
+        }
+      })
       .otherwise({
         redirectTo: '/'
       });
