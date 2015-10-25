@@ -118,6 +118,16 @@ angular.module('lineApp')
           {name : "非补贴", code : 0},
           {name : "补贴游", code : 1},
           {name : "公益游", code : 2}
+      ],
+      orderstate : [
+          {name : "全部", code : ""},
+          {name : "待处理", code : 0},
+          {name : "已退回", code : 1},
+          {name : "已处理", code : 2},
+          {name : "投诉中", code : 3},
+          {name : "申请退款", code : 0},
+          {name : "退款中", code : 1},
+          {name : "退款完成", code : 2}
       ]
     };
   });
