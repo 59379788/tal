@@ -11,7 +11,7 @@ angular.module('lineApp')
   .factory('order', function ($resource, zidong, $q, $http) {
     
     //查询列表
-    var queryapi = zidong + "order/list";
+    var queryapi = zidong + "order/talist";
     
     //订单统计
     var statisticsapi = zidong + "order/statistics";
