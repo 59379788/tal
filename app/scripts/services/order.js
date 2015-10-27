@@ -14,7 +14,7 @@ angular.module('lineApp')
     var queryapi = zidong + "order/talist";
     
     //订单统计
-    var statisticsapi = zidong + "order/statistics";
+    var statisticsapi = zidong + "order/tasalelist";
     
 
     // Public API here
