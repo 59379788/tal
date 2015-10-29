@@ -14,6 +14,7 @@ angular.module('lineApp')
     
     $scope.searchform = {};
     
+    
     $scope.typearray = ["省内","国内","出境"];
     
     /* 地区下拉列表

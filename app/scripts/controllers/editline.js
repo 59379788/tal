@@ -64,9 +64,8 @@ angular.module('lineApp')
                         }
                     }
                 }
-               // $scope.line.areaarray = res.data;
+
                 $scope.line.areaarray = $scope.line["type" + $scope.line.type + "array"];
-                //$scope.line.area = $scope.line.areaarray[0].code;
             }
         });
         
@@ -86,17 +85,6 @@ angular.module('lineApp')
             }
         });
         
-//        insurance.get({ta:"1", _type:"nonpage"}, function(res){
-//        
-//            console.log(res);
-//            if(res.errcode === 0)
-//            {
-//                res.data.push({title:"无", id:0, platformprice:0});
-//                $scope.line.insurancearray = res.data;
-//                $scope.line.changeinsurance($scope.line.insurance);
-//            }
-//
-//        });
         
     });
     
@@ -114,6 +102,8 @@ angular.module('lineApp')
             if(res.errcode == 0)
             {
                 alert("修改成功");
+                $scope.line.init();
+                
             }
             
         });

@@ -170,7 +170,7 @@
       </div>
       <div class="col-md-3 mt10">
         <img ng-src="{{line.img}}" width="100%" height="200" ng-model="line.img">
-         <input type="file" nv-file-select uploader="uploader" /><br/>
+        <input type="file" nv-file-select uploader="uploader" /><br/>
         <ul class="list-group">
             <li class="list-group-item" ng-repeat="item in uploader.queue">
                 文件名: <span ng-bind="item.file.name"></span>

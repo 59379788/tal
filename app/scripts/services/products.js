@@ -187,9 +187,7 @@ angular.module('lineApp')
 
                 if(this.trip_info != undefined && this.trip_info != "")
                 {
-                    console.log(this.trip_info);
                     this.triparray = angular.fromJson(this.trip_info);   
-                    console.log(this.triparray);
                 }
                 for(var i = 0; i < this.triparray.length; i++)
                 {
@@ -197,9 +195,9 @@ angular.module('lineApp')
                     trip.uploader = new FileUploader({
                         url: 'http://cl.juyouhx.com/oss.php/oss/webuploader1?topdir=line&selfdir=trip'
                     });
+                    trip.uploader.dlq = trip;
                     trip.uploader.onSuccessItem = function(fileItem, response, status, headers) {
-                        trip.img = response.savename;
-                        console.log(response);
+                        this.dlq.img = response.savename;
                     };
                     trip.uploader.filters.push({
                         name: 'imageFilter',
@@ -209,6 +207,7 @@ angular.module('lineApp')
                         }
                     });
                 }
+                
                 if(this.triparray.length === 0)
                 {
                     this.newtrip();
@@ -217,13 +216,15 @@ angular.module('lineApp')
             //制作数据
             do : function(){
                 this.depart = angular.toJson(this.departArray);
-                console.log(this.triparray);
                 for(var i = 0; i < this.triparray.length; i++)
                 {
                     delete this.triparray[i].uploader;
                 }
-                console.log(this.triparray);
                 this.trip_info = angular.toJson(this.triparray);
+            },
+            //绑定图片控件。
+            bindimgcom : function(){
+                
             },
             //新建一条发车信息
             newDepart : function(){

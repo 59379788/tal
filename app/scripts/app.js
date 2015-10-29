@@ -251,6 +251,11 @@ angular
             }
         }
       })
+      .when('/test', {
+        templateUrl: 'views/test.html',
+        controller: 'TestCtrl',
+        controllerAs: 'test'
+      })
       .otherwise({
         redirectTo: '/'
       });
