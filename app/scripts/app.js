@@ -240,7 +240,11 @@ angular
       .when('/teaminfo/:teamid', {
         templateUrl: 'views/teaminfo.html',
         controller: 'TeaminfoCtrl',
-        controllerAs: 'teaminfoxx'
+        resolve:{
+            grouporder : function(order){
+                return order.grouporder();
+            }
+        }
       })
       .when('/statistics', {
         templateUrl: 'views/statistics.html',

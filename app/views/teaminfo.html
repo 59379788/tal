@@ -1,39 +1,28 @@
 <div class="panel panel-default">
   <!-- Default panel contents -->
   <div class="panel-heading">Panel heading</div>
+
   <div class="panel-body">
-    <p>测试哈哈啊哈哈</p>
+
+    <div class="panel panel-default" ng-repeat="order in orders">
+      <div class="panel-heading" >
+      {{order.contract_name}}&nbsp;&nbsp;
+      身份证 : {{order.contract_cardno}}&nbsp;&nbsp;
+      电话 : {{order.contract_mobile}}</div>
+      <ul class="list-group">
+        <li class="list-group-item">Cras justo odio</li>
+        <li class="list-group-item">Dapibus ac facilisis in</li>
+        <li class="list-group-item">Morbi leo risus</li>
+        <li class="list-group-item">Porta ac consectetur ac</li>
+        <li class="list-group-item">Vestibulum at eros</li>
+      </ul>
+    </div>
+
+    
   </div>
 
-  <!-- Table -->
-  <table class="table">
-    <thead>
-      <tr>
-        <th>#</th>
-        <th>First Name</th>
-        <th>Last Name</th>
-        <th>Username</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <th scope="row">1</th>
-        <td>Mark</td>
-        <td>Otto</td>
-        <td>@mdo</td>
-      </tr>
-      <tr>
-        <th scope="row">2</th>
-        <td>Jacob</td>
-        <td>Thornton</td>
-        <td>@fat</td>
-      </tr>
-      <tr>
-        <th scope="row">3</th>
-        <td>Larry</td>
-        <td>the Bird</td>
-        <td>@twitter</td>
-      </tr>
-    </tbody>
-  </table>
+
+
+
+
 </div>

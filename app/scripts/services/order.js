@@ -15,6 +15,13 @@ angular.module('lineApp')
     
     //订单统计
     var statisticsapi = zidong + "order/tasalelist";
+
+    //团所有订单
+    var grouporder = zidong + "order/groupOrderList";
+
+
+
+    var orderinfoapi = zidong + "";
     
 
     // Public API here
@@ -24,6 +31,12 @@ angular.module('lineApp')
       },
       statistics : function(){
           return $resource(statisticsapi, {}, {});
+      },
+      info : function(){
+          return $resource(orderinfoapi, {}, {});
+      },
+      grouporder : function(){
+          return $resource(grouporder, {}, {});
       }
     };
   });
