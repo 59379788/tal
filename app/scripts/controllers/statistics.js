@@ -40,6 +40,9 @@ angular.module('lineApp')
         };
         
         statistics.get(para, function(res){
+
+           console.log(res);
+
            if(res.errcode === 0)
            {
                var orderarray = res.data,

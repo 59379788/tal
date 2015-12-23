@@ -256,6 +256,16 @@ angular
         controller: 'TestCtrl',
         controllerAs: 'test'
       })
+      .when('/orderinfo/:orderid', {
+        templateUrl: 'views/orderinfo.html',
+        controller: 'OrderinfoCtrl',
+        controllerAs: 'orderinfo',
+        resolve:{
+            info : function(order){
+                return order.info();
+            }
+        }
+      })
       .otherwise({
         redirectTo: '/'
       });
