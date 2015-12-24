@@ -52,7 +52,7 @@
           <a ng-show="product.state=='1'" ng-click="stop(product.code)" class="btn btn-success ">停用</a>
           <a ng-show="product.state=='0' || product.state=='2'" ng-href="#editline/{{product.code}}" class="btn btn-success ">编辑</a>
           <a ng-href="#team/{{product.code}}" class="btn btn-warning ">发团</a>
-          <a ng-href="#teamlist/{{product.code}}" class="btn btn-info ">团列表</a>
+          <a ng-href="#teamlist/{{product.code}}/{{product.title}}" class="btn btn-info ">团列表</a>
           <a ng-show="product.state=='1'" ng-href="#lineinfo/{{product.code}}" class="btn btn-danger ">详情</a>
 <!--          <button type="button" class="btn btn-danger " ng-click="delete(product.code)">删除</button>-->
       </td>

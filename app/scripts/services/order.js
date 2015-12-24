@@ -19,9 +19,8 @@ angular.module('lineApp')
     //团所有订单
     var grouporder = zidong + "order/groupOrderList";
 
-
-
-    var orderinfoapi = zidong + "";
+    //订单信息
+    var orderinfoapi = zidong + "order/orderDetail";
     
 
     // Public API here

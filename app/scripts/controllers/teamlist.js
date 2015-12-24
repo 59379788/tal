@@ -11,6 +11,12 @@ angular.module('lineApp')
   .controller('TeamlistCtrl', function ($scope, list, $routeParams, shangjia, xiajia, del, finish, stateArray) {
     
     var lineid =  $routeParams.lineid;
+    var linename = $routeParams.linename;
+
+    $scope.linename = linename;
+
+    console.log(linename);
+
     $scope.stateArray = stateArray;
     
     /* 分页

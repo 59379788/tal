@@ -1,1 +1,55 @@
-<p>This is the orderinfo view.</p>
+<div class="panel panel-default">
+
+  <div class="panel-heading">{{order.line_title}} [{{order.code}}]</div>
+  <div class="panel-body">
+  	<div class="form-horizontal">
+	  <div class="form-group">
+	    <label class="col-md-1 control-label ">出发时间 : </label>
+	    <div class="col-md-10">
+	      <p class="form-control-static">{{order.start_group}}</p>
+	    </div>
+	  </div>
+
+	  <div class="form-group">
+	    <label class="col-md-1 control-label ">回团时间 : </label>
+	    <div class="col-md-10">
+	      <p class="form-control-static">{{order.back_group}}</p>
+	    </div>
+	  </div>
+
+	  <div class="form-group">
+	    <label class="col-md-1 control-label ">订单金额 : </label>
+	    <div class="col-md-10">
+	      <p class="form-control-static">{{order.amount}}</p>
+	    </div>
+	  </div>
+
+	  <div class="form-group">
+	    <label class="col-md-1 control-label ">下单时间 : </label>
+	    <div class="col-md-10">
+	      <p class="form-control-static">{{order.order_time}}</p>
+	    </div>
+	  </div>
+
+	  <div class="form-group">
+	    <label class="col-md-1 control-label ">支付时间 : </label>
+	    <div class="col-md-10">
+	      <p class="form-control-static">{{order.pay_time}}</p>
+	    </div>
+	  </div>
+	  
+
+	</div>
+
+  </div>
+
+
+  <table class="table">
+
+  </table>
+
+
+
+
+
+</div>

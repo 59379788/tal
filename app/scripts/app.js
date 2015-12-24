@@ -177,7 +177,7 @@ angular
             }
         }
       })
-      .when('/teamlist/:lineid', {
+      .when('/teamlist/:lineid/:linename', {
         templateUrl: 'views/teamlist.html',
         controller: 'TeamlistCtrl',
         controllerAs: 'teamlist',
@@ -237,7 +237,7 @@ angular
             }
         }
       })
-      .when('/teaminfo/:teamid', {
+      .when('/teaminfo/:teamid/:linename', {
         templateUrl: 'views/teaminfo.html',
         controller: 'TeaminfoCtrl',
         resolve:{
