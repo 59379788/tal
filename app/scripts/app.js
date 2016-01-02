@@ -29,6 +29,8 @@ angular
 //  .value("shoudong", "http://sit.juyouhx.com/api/ac/lc/")
     .value("zidong",   "/api/as/lc/")
     .value("shoudong", "/api/ac/lc/")
+    .value("zidongb",  "/api/as/bc/")
+
   .config(function ($routeProvider) {
     $routeProvider
       .when('/', {
@@ -160,7 +162,7 @@ angular
             }
         }
       })
-      .when('/team/:lineid', {
+      .when('/team/:lineid/:linename', {
         templateUrl: 'views/team.html',
         controller: 'TeamCtrl',
         controllerAs: 'team',
@@ -267,6 +269,76 @@ angular
         resolve:{
             info : function(order){
                 return order.info();
+            }
+        }
+      })
+      .when('/visa', {
+        templateUrl: 'views/visa.html',
+        controller: 'VisaCtrl',
+        controllerAs: 'visa',
+        resolve:{
+            list : function(visa){
+                return visa.list();
+            },
+            country : function(common){
+                return common.getCountry();
+            },
+            visastate : function(common){
+                return common.visastate;
+            },
+            start : function(visa){
+                return visa.start();
+            },
+            stop : function(visa){
+                return visa.stop();
+            }
+        }
+      })
+      .when('/createvisa', {
+        templateUrl: 'views/createvisa.html',
+        controller: 'CreatevisaCtrl',
+        controllerAs: 'createvisa',
+        resolve:{
+            country : function(common){
+                return common.getCountry();
+            },
+            create : function(visa){
+                return visa.create();
+            },
+            model : function(visa){
+                return visa.model();
+            }
+        }
+      })
+      .when('/customorder', {
+        templateUrl: 'views/customorder.html',
+        controller: 'CustomorderCtrl',
+        controllerAs: 'customorder',
+        resolve:{
+            list : function(order){
+                return order.colist();
+            }
+            // country : function(common){
+            //     return common.getCountry();
+            // },
+            // create : function(visa){
+            //     return visa.create();
+            // },
+            // model : function(visa){
+            //     return visa.model();
+            // }
+        }
+      })
+      .when('/customorderdetail/:orderid', {
+        templateUrl: 'views/customorderdetail.html',
+        controller: 'CustomorderdetailCtrl',
+        controllerAs: 'customorderdatilCtrl',
+        resolve:{
+            info : function(order){
+                return order.codetail();
+            },
+            update : function(order){
+                return order.coupdate();
             }
         }
       })

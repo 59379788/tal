@@ -6,11 +6,13 @@
 
     <div class="panel panel-default" ng-repeat="order in orders">
       <div class="panel-heading" >
-      {{order.contract_name}}&nbsp;&nbsp;
+      {{order.contract_name}} {{order.contract_sex}}&nbsp;&nbsp;
       身份证 : {{order.contract_cardno}}&nbsp;&nbsp;
-      电话 : {{order.contract_mobile}}</div>
+      电话 : {{order.contract_mobile}}&nbsp;&nbsp;
+      <span style="color:red;">[{{order.pay_state}}]</span>
+      </div>
       <ul class="list-group">
-        <li class="list-group-item" ng-repeat="per in order.pers" >{{per.name}}{{per.sex}}</li>
+        <li class="list-group-item" ng-repeat="per in order.pers" >{{per.name}} {{per.sex}}</li>
       </ul>
     </div>
 

@@ -74,10 +74,21 @@ angular.module('lineApp')
             pageSize : 999
         };
         insurance(para).then(function(res) {
+
+            console.log(res);
+
             if(res.errcode === 0)
             {
                 res.data.results.push({title:"无", id:"0", platformprice:0});
                 $scope.line.insurancearray = res.data.results;
+                for(var i = 0, j = $scope.line.insurancearray.length; i < j; i++)
+                {
+                    var ins = $scope.line.insurancearray[i];
+                    if(ins.id === $scope.line.insurance)
+                    {
+                        $scope.line.insuranceprice = ins.platformprice;
+                    }
+                }
             }
             else
             {

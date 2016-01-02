@@ -6,7 +6,7 @@
             <div class="col-md-10">
                 <label>旅游地区</label>&nbsp;&nbsp;
                 <select class="form-control" ng-model="searchform.area" 
-                  ng-options="area.code as area.name group by typearray[area.type] for area in areaarray  ">
+                  ng-options="area.code as area.name group by typearray1[area.type] for area in areaarray  ">
                 </select>
                 &nbsp;&nbsp;&nbsp;&nbsp;
                 <label>关键字</label>&nbsp;&nbsp;
@@ -16,11 +16,11 @@
                 <select class="form-control" ng-model="searchform.state" 
                   ng-options="state.code as state.name for state in statearray">
                 </select>
-                &nbsp;&nbsp;&nbsp;&nbsp;
-                <label>线路类型</label>&nbsp;&nbsp;
+                 &nbsp;&nbsp;&nbsp;&nbsp;
+<!--                <label>线路类型</label>&nbsp;&nbsp;
                 <select class="form-control" ng-model="searchform.publishType" 
                   ng-options="publishType.code as publishType.name for publishType in publishTypearray">
-                </select>
+                </select> -->
                 <button type="button" class="btn btn-default search" ng-click="load()">立即搜索</button>
             </div>
             <div class="col-md-2 text-right">
@@ -34,24 +34,24 @@
  <table class="table table-bordered productstable">
   <thead>
     <tr>
-      <th class="text-center">旅游地区</th>
+      <th class="col-md-1 text-center">旅游地区</th>
       <th class="text-center">线路名称</th>
-      <th class="text-center">发布类型</th>
-      <th class="text-center">发布状态</th>
-      <th class="text-center">操作</th>
+      <!-- <th class="text-center">发布类型</th> -->
+      <th class="col-md-1 text-center">发布状态</th>
+      <th class="col-md-3 text-center">操作</th>
     </tr>
   </thead>
   <tbody >
     <tr ng-repeat='product in ps'>
-      <td class="col-md-2 text-center">{{product.areaname}}</td>
+      <td class="col-md-1 text-center">{{product.areaname}}</td>
       <td>{{product.title}}</td>
-      <td class="col-md-1 text-center">{{typearray[product.publish_type]}}</td>
+      <!-- <td class="col-md-1 text-center">{{typearray[product.publish_type]}}</td> -->
       <td class="col-md-1 text-center">{{product.statename}}</td>
       <td class="col-md-3 text-center">
           <a ng-show="product.state=='0' || product.state=='2'" ng-click="start(product.code)" class="btn btn-primary ">启用</a>
           <a ng-show="product.state=='1'" ng-click="stop(product.code)" class="btn btn-success ">停用</a>
           <a ng-show="product.state=='0' || product.state=='2'" ng-href="#editline/{{product.code}}" class="btn btn-success ">编辑</a>
-          <a ng-href="#team/{{product.code}}" class="btn btn-warning ">发团</a>
+          <a ng-href="#team/{{product.code}}/{{product.title}}" class="btn btn-warning ">发团</a>
           <a ng-href="#teamlist/{{product.code}}/{{product.title}}" class="btn btn-info ">团列表</a>
           <a ng-show="product.state=='1'" ng-href="#lineinfo/{{product.code}}" class="btn btn-danger ">详情</a>
 <!--          <button type="button" class="btn btn-danger " ng-click="delete(product.code)">删除</button>-->

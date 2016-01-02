@@ -43,7 +43,7 @@ angular.module('lineApp')
                 title : "",
                 keyword : "",
                 type : "0",             //线路类型--省内游
-                publish_type : "0",     //--其他  发布类型
+                publish_type : "1",     //--其他  发布类型
               //  publish_type_show : "",
                 guarantee : "0",        //是否担保 --否
                 stb_use : "0",          //是否同业可用--否

@@ -11,6 +11,7 @@ angular.module('lineApp')
   .controller('TeamCtrl', function ($routeParams, $scope, teammodel, createteam, $location, teaminfo) {
     
     var lineid =  $routeParams.lineid;
+    var linename =  $routeParams.linename;
     
     teaminfo.get({code : lineid}, function(res){
         
@@ -34,11 +35,6 @@ angular.module('lineApp')
     var year = date.getFullYear();
     var month = date.getMonth();
     
-    if((month === 1) && (year % 4 === 0) && ((year % 100 !== 0) || (year % 400 === 0)))
-    {
-        montharray[1] = 29;
-    }
-    
     //用来渲染视图的数组
     $scope.datearray = [];
     //星期日--星期六
@@ -51,18 +47,23 @@ angular.module('lineApp')
     {
         var dayarray = [];
         var mm = month + i;
+        var yy = year;
         if(mm >= 12) 
         {
             mm -= 12;
-            year += 1;
+            yy += 1;
         }
+
+        if((mm === 1) && (yy % 4 === 0) && ((yy % 100 !== 0) || (yy % 400 === 0)))
+        {
+            montharray[1] = 29;
+        }
+
+    //    alert(yy + "---" + mm);
         
-        var firstdate = new Date();
-        firstdate.setMonth(mm);
-        firstdate.setDate(1);
-        var lastdate = new Date();
-        lastdate.setMonth(mm);
-        lastdate.setDate(montharray[mm]);
+        var firstdate = new Date(yy, mm ,1);
+        var lastdate = new Date(yy, mm, montharray[mm]);
+
         
         var fxingqi = firstdate.getDay();
         var lxingqi = lastdate.getDay();
@@ -95,7 +96,7 @@ angular.module('lineApp')
         }
         
         var daydate = {
-            year : year,
+            year : yy,
             month : mm+1,
             dayarray : dayarray
         };
@@ -163,6 +164,8 @@ angular.module('lineApp')
         
         obj.group_info = $scope.teammodel;
         obj.group_info.line = lineid;
+
+        obj.line = lineid;
         
         //console.log(obj);
         
@@ -172,7 +175,7 @@ angular.module('lineApp')
             if(res.errcode === 0)
             {
                 alert("开团成功");
-                $location.path("teamlist/" + lineid);
+                $location.path("teamlist/" + lineid + "/" + linename);
             }
             else
             {

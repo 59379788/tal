@@ -1,0 +1,161 @@
+
+<div class="panel panel-default">
+
+
+
+  <div class="panel-body">
+
+
+  	<div class="panel panel-default">
+	  <div class="panel-heading">
+	  	<h3 class="panel-title">联系人信息</h3>
+	  </div>
+	  <!-- Table -->
+	  <table class="table form-horizontal">
+		  <tr>
+		    <td class="col-md-4">
+		      <div class="form-group">
+			    <label class="col-md-4 control-label ">联系人 : </label>
+			    <div class="col-md-8">
+			      <p class="form-control-static">{{order.name}}</p>
+			    </div>
+			  </div>
+		    </td>
+		    <td class="col-md-4">
+		      <div class="form-group">
+			    <label class="col-md-4 control-label ">联系方式 : </label>
+			    <div class="col-md-8">
+			      <p class="form-control-static">{{order.mobile}}</p>
+			    </div>
+			  </div>
+
+		    </td>
+		    <td class="col-md-4">
+		      <div class="form-group">
+			    <label class="col-md-4 control-label ">下单时间 : </label>
+			    <div class="col-md-8">
+			      <p class="form-control-static">{{order.order_time}}</p>
+			    </div>
+			  </div>
+
+		    </td>
+		   </tr>
+	  </table>
+	</div>
+
+	<div class="panel panel-default">
+	  <div class="panel-heading">
+	    <h3 class="panel-title">出游信息</h3>
+	  </div>
+	  <table class="table form-horizontal">
+		  <tr>
+		    <td class="col-md-4">
+		      <div class="form-group">
+			    <label class="col-md-4 control-label ">出游方式 : </label>
+			    <div class="col-md-8">
+			      <p class="form-control-static">{{order.type}}</p>
+			    </div>
+			  </div>
+		    </td>
+		    <td class="col-md-4">
+		      <div class="form-group">
+			    <label class="col-md-4 control-label ">目的城市 : </label>
+			    <div class="col-md-8">
+			      <p class="form-control-static">{{order.destination}}</p>
+			    </div>
+			  </div>
+
+		    </td>
+		    <td class="col-md-4">
+		      <div class="form-group">
+			    <label class="col-md-4 control-label ">出发城市 : </label>
+			    <div class="col-md-8">
+			      <p class="form-control-static">{{order.out_city}}</p>
+			    </div>
+			  </div>
+
+		    </td>
+		  </tr>
+
+
+		  <tr>
+		    <td class="col-md-4">
+		      <div class="form-group">
+			    <label class="col-md-4 control-label ">出游日期 : </label>
+			    <div class="col-md-8">
+			      <p class="form-control-static">{{order.out_date}}</p>
+			    </div>
+			  </div>
+		    </td>
+		    <td class="col-md-4">
+		      <div class="form-group">
+			    <label class="col-md-4 control-label ">游玩天数 : </label>
+			    <div class="col-md-8">
+			      <p class="form-control-static">{{order.out_days}}</p>
+			    </div>
+			  </div>
+
+		    </td>
+		    <td class="col-md-4">
+		      <div class="form-group">
+			    <label class="col-md-4 control-label ">成人人数 : </label>
+			    <div class="col-md-8">
+			      <p class="form-control-static">{{order.adult_num}}人</p>
+			    </div>
+			  </div>
+
+		    </td>
+		  </tr>
+
+
+		  <tr>
+		    <td class="col-md-4">
+		      <div class="form-group">
+			    <label class="col-md-4 control-label ">儿童人数 : </label>
+			    <div class="col-md-8">
+			      <p class="form-control-static">{{order.child_num}}人</p>
+			    </div>
+			  </div>
+		    </td>
+		    <td class="col-md-4">
+		      <div class="form-group">
+			    <label class="col-md-4 control-label ">人均预算 : </label>
+			    <div class="col-md-8">
+			      <p class="form-control-static">{{order.price}}</p>
+			    </div>
+			  </div>
+
+		    </td>
+		    <td class="col-md-4">
+		      <div class="form-group">
+			    <label class="col-md-4 control-label ">订单状态 : </label>
+			    <div class="col-md-8">
+			      <button ng-show="order.state=='0'" type="button" class="btn btn-success" ng-click="heheda(order.id)"> {{statearr[order.state]}}</button>
+			      <p ng-show="order.state=='1'" class="form-control-static">{{statearr[order.state]}}</p>
+			    </div>
+			  </div>
+
+		    </td>
+		  </tr>
+
+		  
+	  </table>
+	</div>
+
+
+  	<div class="panel panel-default">
+	  <div class="panel-heading">
+	  	<h3 class="panel-title">其他要求</h3>
+	  </div>
+	  <div class="panel-body">
+	    {{order.other}}
+	  </div>
+	 
+	</div>
+
+  </div>
+
+
+
+
+</div>

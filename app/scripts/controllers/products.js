@@ -15,14 +15,14 @@ angular.module('lineApp')
     $scope.searchform = {};
     
     
-    $scope.typearray = ["省内","国内","出境"];
+    $scope.typearray1 = ["省内","国内","出境"];
     
     /* 地区下拉列表
      * ========================================= */
     area.get({_type:"nonpage"}, function(res){
         if(res.errcode === 0)
         {
-            //console.log(res.data);
+            console.log(res.data);
             res.data.push({code:9999, id:9999, name:"全部"});
             $scope.areaarray = res.data; 
             $scope.searchform.area = 9999;
@@ -45,7 +45,7 @@ angular.module('lineApp')
     $scope.load = function () {
         
         var para = {
-            ta:1, 
+        //    ta:1, 
             pageNo:$scope.bigCurrentPage, 
             pageSize:$scope.itemsPerPage
         };
@@ -53,16 +53,15 @@ angular.module('lineApp')
         var area = $scope.searchform.area;
         var keyword = $scope.searchform.keyword;
         var state = $scope.searchform.state;
-        var publish_type = $scope.searchform.publishType;
-        
+        var publish_type = "1";//$scope.searchform.publishType;
         if(area !== 9999) para.area = area;
-        if(state !== 9999) para.state = state;
+        if(state !== 9999) para.state = state + "";
         if(keyword !== undefined) para.keyword = keyword;
-        if(publish_type !== 9999) para.publish_type = publish_type;
+     //   if(publish_type !== 9999) para.publish_type = publish_type;
         
-       // console.log(para);
+        console.log(para);
         
-        ps.get(para, function(res){
+        ps.save(para, function(res){
 
            if(res.errcode == 0)
            {

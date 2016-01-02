@@ -8,7 +8,7 @@
  * Factory in the lineApp.
  */
 angular.module('lineApp')
-  .factory('order', function ($resource, zidong, $q, $http) {
+  .factory('order', function ($resource, zidong, $q, $http, zidongb) {
     
     //查询列表
     var queryapi = zidong + "order/talist";
@@ -21,6 +21,15 @@ angular.module('lineApp')
 
     //订单信息
     var orderinfoapi = zidong + "order/orderDetail";
+
+    //定制线路订单列表
+    var customorderlist = zidongb + "bookline/talist";
+
+    //定制线路订单详情
+    var customorderdetail = zidongb + "bookline/tainfo";
+
+    //修改定制线路订单状态
+    var customorderupdate = zidongb + "bookline/updatestate";
     
 
     // Public API here
@@ -36,6 +45,15 @@ angular.module('lineApp')
       },
       grouporder : function(){
           return $resource(grouporder, {}, {});
+      },
+      colist : function(){
+          return $resource(customorderlist, {}, {});
+      },
+      codetail : function(){
+          return $resource(customorderdetail, {}, {});
+      },
+      coupdate : function(){
+          return $resource(customorderupdate, {}, {});
       }
     };
   });

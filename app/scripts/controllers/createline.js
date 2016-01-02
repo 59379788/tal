@@ -35,6 +35,8 @@ angular.module('lineApp')
         
         $scope.line = line;
 
+        console.log(res);
+
         if(res.errcode === 0)
         {
             if($scope.line.type0array.length === 0)

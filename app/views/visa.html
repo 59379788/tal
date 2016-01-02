@@ -1,0 +1,76 @@
+
+
+<div class="panel panel-default">
+    <div class="panel-body">
+        <div class="form-group form-inline productssearchform">
+            <div class="col-md-10">
+                <label>国家</label>&nbsp;&nbsp;
+                <select class="form-control" ng-model="searchform.country" 
+                  ng-options="country.id as country.country for country in countryarray">
+                  <option value="">-- 请选择 --</option>
+                </select>&nbsp;&nbsp;
+                <label>关键字</label>&nbsp;&nbsp;
+                <input type="text" class="form-control" ng-model="searchform.keyword" >
+                &nbsp;&nbsp;&nbsp;&nbsp;
+                <label>状态</label>&nbsp;&nbsp;
+                <select class="form-control" ng-model="searchform.state" 
+                  ng-options="state.code as state.name for state in visastate">
+                  <option value="">-- 全部 --</option>
+                </select>
+                 &nbsp;&nbsp;&nbsp;&nbsp;
+                <button type="button" class="btn btn-default search" ng-click="load()">立即搜索</button>
+            </div>
+            <div class="col-md-2 text-right">
+                <button type="button" class="btn btn-info new" ng-click="create()">新建签证</button>
+            </div>
+        </div>
+    </div>
+</div><!-- searchArea -->
+ 
+ 
+ <table class="table table-bordered productstable">
+  <thead>
+    <tr>
+      <th class="col-md-1 text-center">国家</th>
+      <th class="text-center">签证标题</th>
+      <!-- <th class="text-center">发布类型</th> -->
+      <th class="col-md-1 text-center">发布状态</th>
+      <th class="col-md-3 text-center">操作</th>
+    </tr>
+  </thead>
+  <tbody >
+    <tr ng-repeat='visa in visas'>
+      <td class="col-md-1 text-center">{{visa.country}}</td>
+      <td>{{visa.title}}</td>
+      <!-- <td class="col-md-1 text-center">{{typearray[product.publish_type]}}</td> -->
+      <td class="col-md-1 text-center">{{statearr[visa.state]}}</td>
+      <td class="col-md-3 text-center">
+          <a ng-show="visa.state=='0'" ng-click="start(visa.id)" class="btn btn-primary ">启用</a>
+          <a ng-show="visa.state=='1'" ng-click="stop(visa.id)" class="btn btn-success ">停用</a>
+          <a ng-show="visa.state=='0'" ng-href="#editvisa/{{visa.id}}" class="btn btn-success ">编辑</a>
+          <!-- <a ng-href="#team/{{product.code}}/{{product.title}}" class="btn btn-warning ">发团</a>
+          <a ng-href="#teamlist/{{product.code}}/{{product.title}}" class="btn btn-info ">团列表</a> -->
+          <a ng-href="#lineinfo/{{product.code}}" class="btn btn-danger ">详情</a>
+<!--          <button type="button" class="btn btn-danger " ng-click="delete(product.code)">删除</button>-->
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="col-md-12 text-right">
+    <pagination items-per-page="itemsPerPage" 
+                total-items="bigTotalItems" 
+                ng-model="bigCurrentPage" 
+                max-size="maxSize" 
+                class="pagination-sm" 
+                boundary-links="true" 
+                rotate="false" 
+                num-pages="numPages" 
+                previous-text="上一页"
+                next-text="下一页"
+                first-text="首页"
+                last-text="末页"
+                ng-change="load()"></pagination>
+</div>
+
+ 

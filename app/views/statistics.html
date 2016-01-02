@@ -62,13 +62,13 @@
     <tr>
       <th class="col-md-1 text-center">收客日期</th>
       <th class="col-md-1 text-center">订单状态</th>
-      <th class="col-md-3 text-center">团线名称</th>
+      <th class="col-md-2 text-center">团线名称</th>
       <th class="col-md-1 text-center">订单号</th>
+      <th class="col-md-1 text-center">联系人</th>
       <th class="col-md-1 text-center">订单人数</th>
       <th class="col-md-2 text-center">团线信息</th>
       <th class="col-md-1 text-center">总金额(元)</th>
-      <!-- <th class="col-md-1 text-center">退款(元)</th> -->
-      <th class="col-md-1 text-center">补贴支出(元)</th>
+      <th class="col-md-1 text-center">补贴(元)</th>
       <th class="col-md-1 text-center">操作</th>
     </tr>
   </thead>
@@ -76,27 +76,30 @@
     <tr ng-repeat='order in target.arr'>
       <td class="col-md-1 text-center">{{order.order_time}}</td>
       <td class="col-md-1 text-center">{{order.pay_state}}</td>
-      <td class="col-md-3 text-center">{{order.line_title}}</td>
+      <td class="col-md-2 text-center">{{order.line_title}}</td>
       <td class="col-md-1 text-center">{{order.code}}</td>
-      <td class="col-md-1 text-center">{{order.adult}}成人<br>{{order.child}}儿童</td>
+      <td class="col-md-1 text-center">{{order.contract_name}}<br>{{order.contract_mobile}}</td>
+      <td class="col-md-1 text-center">{{order.adult}}人</td>
       <td class="col-md-2 text-center">发团 : {{order.start_group}}<br>回团 : {{order.back_group}}</td>
-      <td class="col-md-1 text-center">{{order.amount}}</td>
+      <td class="col-md-1 text-center">{{order.amount | number:2}}</td>
       <!-- <td class="col-md-1 text-center">{{order.refund}}</td> -->
-      <td class="col-md-1 text-center">{{order.subsidy}}</td>
+      <td class="col-md-1 text-center">{{order.subsidy | number:2}}</td>
       <td class="col-md-1 text-center">
         <a ng-href="#orderinfo/{{order.code}}" type="button" class="btn btn-primary">查看详情</a>
       </td>
     </tr>
     <tr>
+      <td class="col-md-1 text-center"></td>
+      <td class="col-md-1 text-center"></td>
+      <td class="col-md-2 text-center"></td>
+      <td class="col-md-1 text-center"></td>
+      <td class="col-md-1 text-center"></td>
+      <td class="col-md-1 text-center"></td>
       <td class="col-md-2 text-center">合计</td>
-      <td class="col-md-1 text-center"></td>
-      <td class="col-md-2 text-center"></td>
-      <td class="col-md-1 text-center"></td>
-      <td class="col-md-1 text-center"></td>
-      <td class="col-md-2 text-center"></td>
       <td class="col-md-1 text-center">{{target.allamount | number:2}}</td>
-      <td class="col-md-1 text-center">{{target.allrefund | number:2}}</td>
+      <!-- <td class="col-md-1 text-center">{{target.allrefund | number:2}}</td> -->
       <td class="col-md-1 text-center">{{target.allsubsidy | number:2}}</td>
+      <td class="col-md-1 text-center"></td>
     </tr>
   </tbody>
 </table>

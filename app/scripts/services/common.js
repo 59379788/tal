@@ -8,7 +8,7 @@
  * Factory in the lineApp.
  */
 angular.module('lineApp')
-  .factory('common', function ($resource, zidong, $q, $http) {
+  .factory('common', function ($resource, zidong, $q, $http, zidongb) {
     
     //区域
     var areaapi = zidong + "area/list";
@@ -28,12 +28,17 @@ angular.module('lineApp')
     var startinsuranceapi = zidong + "insurance/onshelf";
     
     var stopinsuranceapi = zidong + "insurance/offshelf";
+
+    var country = zidongb + "visacountry/list";
     
 
     // Public API here
     return {
       getArea : function () {
         return $resource(areaapi, {}, {});
+      },
+      getCountry : function(){
+        return $resource(country, {}, {});
       },
       insmodel : {
           
@@ -125,6 +130,10 @@ angular.module('lineApp')
           {name : "申请退款", code : 2},
           {name : "退款中", code : 3},
           {name : "退款完成", code : 4}
+      ],
+      visastate : [
+          {name : "停用", code : "0"},
+          {name : "使用", code : "1"}
       ]
     };
   });

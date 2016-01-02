@@ -12,7 +12,7 @@ angular.module('lineApp')
     
     
     //发团
-    var createteamapi = zidong + "group/add";
+    var createteamapi = shoudong + "groupService/create";
     //查询团列表
     var teamlistapi = zidong + "group/list";
     //上架

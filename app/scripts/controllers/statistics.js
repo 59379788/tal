@@ -11,7 +11,7 @@ angular.module('lineApp')
   .controller('StatisticsCtrl', function ($scope, statistics) {
     
     $scope.today = function() {
-            $scope.dt1 = $scope.dt2 = new Date();
+        $scope.dt1 = $scope.dt2 = new Date();
     };
     $scope.today();
     
@@ -54,7 +54,23 @@ angular.module('lineApp')
                    allsubsidy = 0;
                for(var i = 0, len = orderarray.length; i < len; i++)
                {
+
                    var temorder = orderarray[i];
+
+                   var paystate = temorder.pay_state;
+                   if(paystate == 1)
+                   {
+                      temorder.pay_state = "已支付";
+                   }
+                   else if(paystate == 0)
+                   {
+                      temorder.pay_state = "待支付";
+                   }
+                   else
+                   {
+                      //temorder.pay_state = "";
+                   }
+
                    var grouptime = temorder.group_time;
                    if(tmpdate !== grouptime)
                    {
