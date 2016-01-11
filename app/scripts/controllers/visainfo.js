@@ -2,22 +2,23 @@
 
 /**
  * @ngdoc function
- * @name lineApp.controller:CreatevisaCtrl
+ * @name lineApp.controller:VisainfoCtrl
  * @description
- * # CreatevisaCtrl
+ * # VisainfoCtrl
  * Controller of the lineApp
  */
 angular.module('lineApp')
-  .controller('CreatevisaCtrl', function ($scope, $location, FileUploader, country, create, model) {
+  .controller('VisainfoCtrl', function ($scope, $routeParams, country, FileUploader, detail) {    
     
-	$scope.visa = model;
+    var visaid =  $routeParams.visaid;
 
-	var uploader = $scope.uploader = new FileUploader({
+    $scope.hide = true;
+    
+    var uploader = $scope.uploader = new FileUploader({
         url: 'http://cl.juyouhx.com/oss.php/oss/webuploader1?topdir=aa&selfdir=bb'
     });
-
+    
     // FILTERS
-
     uploader.filters.push({
         name: 'imageFilter',
         fn: function(item /*{File|FileLikeObject}*/, options) {
@@ -30,40 +31,28 @@ angular.module('lineApp')
         $scope.visa.img = response.savename;
     };
 
-
-  	/* 地区下拉列表
+    /* 地区下拉列表
      * ========================================= */
     country.get({pageSize : 200}, function(res){
         if(res.errcode === 0)
         {
             console.log(res.data.results);
-            $scope.countryarray = res.data.results; 
-            $scope.visa.country_id = $scope.countryarray[0].id;
+            $scope.countryarray = res.data.results;
         }
     });
+    
+    detail.get({id : visaid}, function(res){
 
-    $scope.save = function(){
- 
-        //$scope.line.do();
-        console.log($scope.visa);
+        console.log(res);
 
-        var dd = angular.toJson($scope.visa);
+        if(res.errcode !== 0)
+        {
+            alert("获取数据失败");
+            return;
+        }
 
-        alert(dd);
+        $scope.visa = res.data;
         
-        create.save(dd, function(res){
-            
-            console.log(res);
-            
-            if(res.errcode == 0)
-            {
-                alert("添加成功");
-                $location.path("/editvisa/" + res.data);
-            }
-            
-        });
-    };
-
-
-
+    });
+    
   });

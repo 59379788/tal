@@ -8,15 +8,15 @@
  * Factory in the lineApp.
  */
 angular.module('lineApp')
-  .factory('visa', function (zidongb, $resource) {
+  .factory('visa', function (zidongb, shoudongb, $resource) {
     
     var list = zidongb + "visa/talist";
 
-    var create = zidongb + "visa/add";
+    var create = shoudongb + "visaService/create";
 
-    var detail = zidongb + "";
+    var detail = zidongb + "visa/info";
 
-    var modify = zidongb + "";
+    var edit = zidongb + "visa/edit";
 
     //启用签证
     var start = zidongb + "visa/start";
@@ -55,6 +55,12 @@ angular.module('lineApp')
       },
       stop : function(){
           return $resource(stop, {}, {});
+      },
+      detail : function(){
+          return $resource(detail, {}, {});
+      },
+      edit : function(){
+          return $resource(edit, {}, {});
       }
     };
   });

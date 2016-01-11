@@ -30,7 +30,7 @@ angular
     .value("zidong",   "/api/as/lc/")
     .value("shoudong", "/api/ac/lc/")
     .value("zidongb",  "/api/as/bc/")
-
+    .value("shoudongb",  "/api/ac/bc/")
   .config(function ($routeProvider) {
     $routeProvider
       .when('/', {
@@ -310,6 +310,35 @@ angular
             }
         }
       })
+      .when('/editvisa/:visaid', {
+        templateUrl: 'views/createvisa.html',
+        controller: 'EditvisaCtrl',
+        controllerAs: 'editvisa',
+        resolve:{
+            country : function(common){
+                return common.getCountry();
+            },
+            edit : function(visa){
+                return visa.edit();
+            },
+            detail : function(visa){
+                return visa.detail();
+            }
+        }
+      })
+      .when('/visainfo/:visaid', {
+        templateUrl: 'views/createvisa.html',
+        controller: 'VisainfoCtrl',
+        controllerAs: 'visainfo',
+        resolve:{
+            country : function(common){
+                return common.getCountry();
+            },
+            detail : function(visa){
+                return visa.detail();
+            }
+        }
+      })
       .when('/customorder', {
         templateUrl: 'views/customorder.html',
         controller: 'CustomorderCtrl',
@@ -318,15 +347,6 @@ angular
             list : function(order){
                 return order.colist();
             }
-            // country : function(common){
-            //     return common.getCountry();
-            // },
-            // create : function(visa){
-            //     return visa.create();
-            // },
-            // model : function(visa){
-            //     return visa.model();
-            // }
         }
       })
       .when('/customorderdetail/:orderid', {
