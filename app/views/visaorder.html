@@ -1,0 +1,122 @@
+
+<div class="panel panel-default">
+    <div class="panel-body">
+        <div class="form-group form-inline ordersearchform">
+            <div class="col-md-10">
+                <div class="input-group">
+                <input type="text" class="form-control" 
+                        datepicker-popup="{{format}}" 
+                        ng-model="dt1"
+                        datepicker-popup="yyyy-mm-dd"
+                        is-open="status1.opened" 
+                        min-date="minDate" 
+                        max-date="maxDate" 
+                        datepicker-options="dateOptions" 
+                        date-disabled="disabled(date, mode)" 
+                        ng-required="true" 
+                        close-text="Close" 
+                        placeholder="请输入开始时间" readonly/>
+                <span class="input-group-btn">
+                    <button type="button" class="btn btn-default" ng-click="open1($event)">
+                        <i class="glyphicon glyphicon-calendar"></i>
+                    </button>
+                </span>
+                </div>
+                      &nbsp;&nbsp;~&nbsp;&nbsp;            
+                <div class="input-group">
+                <input type="text" class="form-control" 
+                        datepicker-popup="{{format}}" 
+                        ng-model="dt2"
+                        datepicker-popup="yyyy-mm-dd"
+                        is-open="status2.opened" 
+                        min-date="minDate" 
+                        max-date="maxDate" 
+                        datepicker-options="dateOptions" 
+                        date-disabled="disabled(date, mode)" 
+                        ng-required="true" 
+                        close-text="Close" 
+                        placeholder="请输入结束时间" readonly/>
+                <span class="input-group-btn">
+                    <button type="button" class="btn btn-default" ng-click="open2($event)">
+                        <i class="glyphicon glyphicon-calendar"></i>
+                    </button>
+                </span>
+                </div> 
+
+                &nbsp;&nbsp;
+                <label>国家</label>&nbsp;&nbsp;
+                <select class="form-control" ng-model="searchform.country_id" 
+                  ng-options="country.id as country.country for country in countryarray">
+                  <option value="">-- 请选择 --</option>
+                </select>
+
+                &nbsp;&nbsp;
+                <label>状态</label>&nbsp;&nbsp;
+                <select class="form-control" ng-model="searchform.state" >
+                  <option value="">全部</option>
+                  <option value="0">未处理</option>
+                  <option value="1">已处理</option>
+                </select>
+
+
+            <button type="button" class="btn btn-default search" ng-click="load()">立即搜索</button>
+            </div>
+            <div class="col-md-2 text-right">
+                
+                
+            </div>
+        </div>
+    </div>
+</div><!-- searchArea -->
+ 
+ 
+<table class="table table-bordered productstable" >
+  <thead>
+    <tr>
+      <th class="col-md-2 text-center">下单日期</th>
+      <th class="col-md-1 text-center">国家</th>
+      <th class="text-center">签证名称</th>
+      <th class="col-md-1 text-center">游客姓名</th>
+      <th class="col-md-2 text-center">游客电话</th>
+      <th class="col-md-2 text-center">游客身份证</th>
+      <!-- <th class="col-md-1 text-center">状态</th> -->
+      <th class="col-md-1 text-center">操作</th>
+    </tr>
+  </thead>
+  <tbody >
+    <tr ng-repeat='order in orders'>
+      <td class="col-md-2 text-center">{{order.order_time}}</td>
+      <td class="col-md-1 text-center">{{order.country}}</td>
+      <td class="text-center">{{order.title}}</td>
+      <td class="col-md-1 text-center">{{order.contact_name}}</td>
+      <td class="col-md-2 text-center">{{order.contact_mobile}}</td>
+      <td class="col-md-2 text-center">{{order.contact_code}}</td>
+      <!-- <td class="col-md-1 text-center">{{order.state}}</td> -->
+      <td class="col-md-1 text-center">
+        <a ng-show="order.state=='0'" ng-click="update(order.code)" type="button" class="btn btn-primary">
+          未确认
+        </a>
+        <span ng-show="order.state=='1'">已确认</span>
+      </td>
+
+    </tr>
+  </tbody>
+</table>
+
+<div class="col-md-12 text-right">
+    <pagination items-per-page="itemsPerPage" 
+                total-items="bigTotalItems" 
+                ng-model="bigCurrentPage" 
+                max-size="maxSize" 
+                class="pagination-sm" 
+                boundary-links="true" 
+                rotate="false" 
+                num-pages="numPages" 
+                previous-text="上一页"
+                next-text="下一页"
+                first-text="首页"
+                last-text="末页"
+                ng-change="load()"></pagination>
+</div>
+
+ 

@@ -30,6 +30,15 @@ angular.module('lineApp')
 
     //修改定制线路订单状态
     var customorderupdate = zidongb + "bookline/updatestate";
+
+    //签证订单列表
+    var visaorderlist = zidongb + "visaorder/talist";
+
+    //签证详情
+    var visaorderdetail = zidongb + "visaorder/tainfo";
+
+    //修改签证订单状态
+    var visaorderupdate = zidongb + "visaorder/updatestate";
     
 
     // Public API here
@@ -54,6 +63,15 @@ angular.module('lineApp')
       },
       coupdate : function(){
           return $resource(customorderupdate, {}, {});
+      },
+      volist : function(){
+          return $resource(visaorderlist, {}, {});
+      },
+      vodetail : function(){
+          return $resource(visaorderdetail, {}, {});
+      },
+      voupdate : function(){
+          return $resource(visaorderupdate, {}, {});
       }
     };
   });

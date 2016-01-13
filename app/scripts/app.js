@@ -339,6 +339,37 @@ angular
             }
         }
       })
+      .when('/visaorder', {
+        templateUrl: 'views/visaorder.html',
+        controller: 'VisaorderCtrl',
+        controllerAs: 'visaorder',
+        resolve:{
+            country : function(common){
+                return common.getCountry();
+            },
+            list : function(order){
+                return order.volist();
+            },
+            updatestate : function(order){
+                return order.voupdate();
+            }
+        }
+      })
+
+      .when('/visaorderinfo/:orderid', {
+        templateUrl: 'views/visaorderdetail.html',
+        controller: 'VisaorderdetailCtrl',
+        controllerAs: 'visaorderdetail',
+        resolve:{
+            info : function(order){
+                return order.vodetail();
+            },
+            update : function(order){
+                return order.voupdate();
+            }
+        }
+      })
+
       .when('/customorder', {
         templateUrl: 'views/customorder.html',
         controller: 'CustomorderCtrl',
