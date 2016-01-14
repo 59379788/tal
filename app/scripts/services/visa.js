@@ -12,7 +12,9 @@ angular.module('lineApp')
     
     var list = zidongb + "visa/talist";
 
-    var create = shoudongb + "visaService/create";
+    var create = shoudongb + "VisaListService/create";
+
+    //var create = zidongb + "visa/add";
 
     var detail = zidongb + "visa/info";
 

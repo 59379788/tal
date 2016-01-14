@@ -49,7 +49,7 @@ angular.module('lineApp')
 
         var dd = angular.toJson($scope.visa);
 
-        alert(dd);
+        //alert(dd);
         
         create.save(dd, function(res){
             
