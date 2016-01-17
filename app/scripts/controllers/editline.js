@@ -103,13 +103,25 @@ angular.module('lineApp')
     
     
     $scope.save = function(){
+
+        if($scope.line.market_price - $scope.line.discount_adult <= 0)
+        {
+            alert("请输入正确价格")
+            return ;
+        }
+
+        if($scope.line.market_price_child - $scope.line.discount_child <= 0)
+        {
+            alert("请输入正确价格")
+            return ;
+        }
         
         $scope.line.do();
         
         //console.log($scope.line);
         
         editline.save($scope.line, function(res){
-            //console.log(res);
+            console.log(res);
             if(res.errcode == 0)
             {
                 alert("修改成功");

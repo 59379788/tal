@@ -40,6 +40,8 @@ angular.module('lineApp')
           daysarr : [],
           person_limit : "30",
           
+          market_price : "0",
+          market_price_child : "0",
           platform_adult : "0",     //平台成人价格
           stb_adult : "0",          //同业成人价格
           subsidy_adult : "0",      //补贴成人价格

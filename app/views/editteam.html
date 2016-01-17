@@ -12,43 +12,19 @@
     </div>
     <div class="form-horizontal mt20">
         <div class="form-group">
-            <label class="col-md-2 control-label text-right">平台成人价格</label>
+            <label class="col-md-2 control-label text-right">市场成人价格</label>
             <div class="col-md-2">
-                <input type="text" class="form-control" ng-model="teammodel.platform_adult">
+                <input type="text" class="form-control" 
+                ng-model="teammodel.market_price">
             </div>
-            <label class="col-md-2 control-label text-right">平台儿童价格</label>
+            <label class="col-md-2 control-label text-right">市场儿童价格</label>
             <div class="col-md-2">
-                <input type="text" class="form-control" ng-model="teammodel.platform_child">
-            </div>
-        </div>
-    </div>
-    
-    <div class="form-horizontal mt20">
-        <div class="form-group">
-            <label class="col-md-2 control-label text-right">同业成人价格</label>
-            <div class="col-md-2">
-                <input type="text" class="form-control" ng-model="teammodel.stb_adult">
-            </div>
-            <label class="col-md-2 control-label text-right">同业儿童价格</label>
-            <div class="col-md-2">
-                <input type="text" class="form-control" ng-model="teammodel.stb_child">
+                <input type="text" class="form-control" 
+                ng-model="teammodel.market_price_child">
             </div>
         </div>
     </div>
-    
-    <div class="form-horizontal mt20">
-        <div class="form-group">
-            <label class="col-md-2 control-label text-right">补贴成人价格</label>
-            <div class="col-md-2">
-                <input type="text" class="form-control" ng-model="teammodel.subsidy_adult">
-            </div>
-            <label class="col-md-2 control-label text-right">补贴儿童价格</label>
-            <div class="col-md-2">
-                <input type="text" class="form-control" ng-model="teammodel.subsidy_child">
-            </div>
-        </div>
-    </div>
-    
+
     <div class="form-horizontal mt20">
         <div class="form-group">
             <label class="col-md-2 control-label text-right">让利成人价格</label>
@@ -61,6 +37,51 @@
             </div>
         </div>
     </div>
+
+    <div class="form-horizontal mt20">
+        <div class="form-group">
+            <label class="col-md-2 control-label text-right">平台成人价格</label>
+            <div class="col-md-2 text-left">
+                <p class="form-control-static" ng-model="teammodel.platform_adult">
+                    {{teammodel.market_price - teammodel.discount_adult}}
+                </p>
+            </div>
+            <label class="col-md-2 control-label text-right">平台儿童价格</label>
+            <div class="col-md-2 text-left">
+                <p class="form-control-static" ng-model="teammodel.platform_child">
+                    {{teammodel.market_price_child - teammodel.discount_child}}
+                </p>
+            </div>
+        </div>
+    </div>
+    
+<!--     <div class="form-horizontal mt20">
+        <div class="form-group">
+            <label class="col-md-2 control-label text-right">同业成人价格</label>
+            <div class="col-md-2">
+                <input type="text" class="form-control" ng-model="teammodel.stb_adult">
+            </div>
+            <label class="col-md-2 control-label text-right">同业儿童价格</label>
+            <div class="col-md-2">
+                <input type="text" class="form-control" ng-model="teammodel.stb_child">
+            </div>
+        </div>
+    </div> -->
+    
+<!--     <div class="form-horizontal mt20">
+        <div class="form-group">
+            <label class="col-md-2 control-label text-right">补贴成人价格</label>
+            <div class="col-md-2">
+                <input type="text" class="form-control" ng-model="teammodel.subsidy_adult">
+            </div>
+            <label class="col-md-2 control-label text-right">补贴儿童价格</label>
+            <div class="col-md-2">
+                <input type="text" class="form-control" ng-model="teammodel.subsidy_child">
+            </div>
+        </div>
+    </div> -->
+    
+
 
 
     <div class="row mt20">

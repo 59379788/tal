@@ -41,6 +41,8 @@ angular.module('lineApp')
     var visaorderupdate = zidongb + "visaorder/updatestate";
     
 
+    
+
     // Public API here
     return {
       query : function(){

@@ -167,11 +167,11 @@ angular.module('lineApp')
 
         obj.line = lineid;
         
-        //console.log(obj);
+        console.log(obj);
         
         createteam.save(obj, function(res){
             
-            //console.log(res);
+            console.log(res);
             if(res.errcode === 0)
             {
                 alert("开团成功");
