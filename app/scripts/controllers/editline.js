@@ -110,11 +110,11 @@ angular.module('lineApp')
             return ;
         }
 
-        if($scope.line.market_price_child - $scope.line.discount_child <= 0)
-        {
-            alert("请输入正确价格")
-            return ;
-        }
+        // if($scope.line.market_price_child - $scope.line.discount_child <= 0)
+        // {
+        //     alert("请输入正确价格")
+        //     return ;
+        // }
         
         $scope.line.do();
         
